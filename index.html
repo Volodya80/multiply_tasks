@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка таблицы умножения</title>
+    <style>
+        h1 {
+            text-align: center;
+            line-height: 150px;
+            color: blue;
+            background: linear-gradient(to left, red, yellow, green, yellow, red);
+            height: 150px;
+            font-size: 48pt;
+        }
+        .task {
+            padding: 100px;
+            font-size: 24pt;
+        }
+        .task #ans {
+            font-size: inherit;
+        }
+        .task #ok {
+            font-size: inherit;
+        }
+        #result {
+            font-size: 24pt;
+        }
+        #again {
+            font-size: 24pt;
+        }
+    </style>
+</head>
+<body onload="foo()">
+    <h1>Решаем примеры на знание таблицы умножения</h1>
+    <div class='task' id='task_div'>
+        <span id="n1"> </span>
+        *
+        <span id="n2"> </span>
+        =
+        <input type="text" id='ans' value="решение">
+        <input type="button" id='ok' value="Проверить">
+    </div>
+    <div id="result"> </div>
+    <input type="button" name="my_again" id="again" value="Решить еще">
+    <script>
+        'use strict'
+        let n1 = 0;
+        let n2 = 0;
+        let N1 = document.getElementById('n1');
+        let N2 = document.getElementById('n2');
+        let Btn = document.getElementById('ok');
+        let Ans = document.getElementById('ans');
+        let Res = document.getElementById('result');
+
+        function foo() {
+            n1 = Math.floor(Math.random()*10+1);
+            n2 = Math.floor(Math.random()*10+1);
+            
+            N1.innerHTML = n1;
+            N2.innerHTML = n2;
+            document.getElementById("again").hidden = true;
+            Res.innerHTML = '';
+            Ans.value = 'решение';
+        }
+        Btn.onclick = function() {
+            document.getElementById("task_div").hidden = true;
+            document.getElementById("again").hidden = false;
+            if ((+Ans.value) == (n1 * n2)) {
+                Res.innerHTML = "Молодец! Решено правильно";
+                Res.style.color = "blue";
+            } else {
+                Res.innerHTML = "Не верно! Ответ "+(n1*n2);
+                Res.style.color = "red";
+            }
+        }
+        document.getElementById("again").onclick = function() {
+            foo();
+            document.getElementById("task_div").hidden = false;
+        }
+    </script>
+</body>
+</html>
