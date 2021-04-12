@@ -6,29 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проверка таблицы умножения</title>
     <style>
-        h1 {
-            text-align: center;
-            line-height: 150px;
-            color: blue;
-            background: linear-gradient(to left, red, yellow, green, yellow, red);
-            height: 150px;
-            font-size: 48pt;
+        @media screen and (min-width: 1200px) {
+            h1 {
+                text-align: center;
+                line-height: 150px;
+                color: blue;
+                background: linear-gradient(to left, red, yellow, green, yellow, red);
+                height: 150px;
+                font-size: 48pt;
+            }
+            .task {
+                padding: 100px;
+                font-size: 24pt;
+            }
+            .task #ans {
+                font-size: inherit;
+            }
+            .task #ok {
+                font-size: inherit;
+            }
+            #result {
+                font-size: 24pt;
+            }
+            #again {
+                font-size: 24pt;
+            }
         }
-        .task {
-            padding: 100px;
-            font-size: 24pt;
+        @media (min-width: 1000px) and (max-width: 1200px) {
+            h1 {
+                text-align: center;
+                line-height: 50px;
+                color: blue;
+                background: linear-gradient(to left, red, yellow, green, yellow, red);
+                height: 50px;
+                font-size: 14pt;
+            }
+            .task {
+                padding: 20px;
+                font-size: 12pt;
+            }
+            .task #ans {
+                font-size: inherit;
+            }
+            .task #ok {
+                font-size: inherit;
+            }
+            #result {
+                font-size: 12pt;
+            }
+            #again {
+                font-size: 12pt;
+            }
         }
-        .task #ans {
-            font-size: inherit;
-        }
-        .task #ok {
-            font-size: inherit;
-        }
-        #result {
-            font-size: 24pt;
-        }
-        #again {
-            font-size: 24pt;
+        @media (max-width: 1000px) {
+            h1 {
+                text-align: center;
+                line-height: 50px;
+                color: blue;
+                background: linear-gradient(to left, red, yellow, green, yellow, red);
+                height: 120px;
+                font-size: 14pt;
+            }
+            .task {
+                font-size: 12pt;
+            }
+            .task #ans {
+                font-size: inherit;
+            }
+            .task #ok {
+                font-size: inherit;
+            }
+            #result {
+                font-size: 12pt;
+            }
+            #again {
+                font-size: 12pt;
+            }
         }
     </style>
 </head>
